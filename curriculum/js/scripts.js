@@ -158,3 +158,37 @@ function VerExperiencia() {
         onComplete: function() { $('loading').hide(); }
     });
 }
+
+
+function AgregarSoftware() {
+
+    if( $('software').value && $('nivelsoftware').value ) {
+        new Ajax.Updater('div-software', 'software.php', {
+            parameters: {software: $('software').value, nivelsoftware: $('nivelsoftware').value },
+            evalScripts: true,
+            onLoading: function() { $('loading').show(); },
+            onComplete: function() { $('loading').hide(); }
+        });
+    }
+    else {
+        alert('Debe completar todos los campos.');
+    }
+}
+
+function EliminarSoftware(id) {
+    new Ajax.Updater('div-software', 'software.php', {
+        parameters: {id: id },
+        evalScripts: true,
+        onLoading: function() { $('loading').show(); },
+        onComplete: function() { $('loading').hide(); }
+    });
+}
+
+function VerSoftware() {
+    new Ajax.Updater('div-software', 'software.php', {
+        parameters: {},
+        evalScripts: true,
+        onLoading: function() { $('loading').show(); },
+        onComplete: function() { $('loading').hide(); }
+    });
+}
