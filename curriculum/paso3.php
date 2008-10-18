@@ -69,9 +69,9 @@
         </tr>
         <tr>
           <td>Software*</td>
-          <td><input name="software" type="text" class="required" id="software" value="<?php echo $curriculum->software; ?>">
+          <td><input name="software" type="text" id="software" value="">
             &nbsp; nivel:
-            <select class="validate-selection" name="nivelsoftware" id="nivelsoftware">
+            <select name="nivelsoftware" id="nivelsoftware">
               <option selected="selected">Seleccione</option>
 				<?php
                     $nivelsoftdb = array("Básico","Usuario","Avanzado");
