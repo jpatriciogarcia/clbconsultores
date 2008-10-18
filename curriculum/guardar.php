@@ -125,21 +125,6 @@ if($_POST["paso"]==2){ //guardar datos del paso1
     $curriculum->Load('rut=?', array($_SESSION['curriculum']['rut']));
 
     //guardar los datos del formulario paso3
-    foreach ( $_SESSION["curriculum"]["add_experiencia"] as $v ) {
-        // ( [anolaboral1] => 2008 [anolaboral2] => 2008 [cargo] => a [empresa] => a [objetivos] => a [logros] => a )
-        $anolaboral1[] = $v["anolaboral1"];
-        $anolaboral2[] = $v["anolaboral2"];
-        $cargo[] = $v["cargo"];
-        $empresa[] = $v["empresa"];
-        $objetivos[] = $v["objetivos"];
-        $logros[] = $v["logros"];
-    }
-
-    $curriculum->anolaboral = implode(";", $anolaboral1) . "-" . implode(";", $anolaboral2) ;
-    $curriculum->cargo = implode(";", $cargo);
-    $curriculum->empresa = implode(";", $empresa);
-    $curriculum->objetivos = implode(";", $objetivos);
-    $curriculum->logros = implode(";", $logros);
     $curriculum->software = $_POST["software"];
     $curriculum->nivelsoftware = $_POST["nivelsoftware"];
 

@@ -37,19 +37,19 @@
       </tr>
       <tr>
         <td>Cargo</td>
-        <td><input name="cargo" type="text" id="cargo" value="<?php echo $curriculum->cargo; ?>"></td>
+        <td><input name="cargo" type="text" id="cargo" value=""></td>
       </tr>
       <tr>
         <td>Empresa</td>
-        <td><input name="empresa" type="text" id="empresa" value="<?php echo $curriculum->empresa; ?>"></td>
+        <td><input name="empresa" type="text" id="empresa" value=""></td>
       </tr>
       <tr>
         <td>Objetivos del cargo</td>
-        <td><input name="objetivos" type="text" id="objetivos" value="<?php echo $curriculum->objetivos; ?>"></td>
+        <td><input name="objetivos" type="text" id="objetivos" value=""></td>
       </tr>
       <tr>
         <td>Logros</td>
-        <td><input name="logros" type="text" id="logros" value="<?php echo $curriculum->logros; ?>"></td>
+        <td><input name="logros" type="text" id="logros" value=""></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
