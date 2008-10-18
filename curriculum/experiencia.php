@@ -1,6 +1,31 @@
 <?php
 require_once("conexion.php");
 
+
+$_carrera = $_mencion = $_institucion = $_estadoestudio = $_anoegresosuperior = array();
+if ($_SESSION["curriculum"]["add_experiencia"]) {
+    foreach ( $_SESSION["curriculum"]["add_experiencia"] as $v ) {
+        //( [carrera] => 5 [mencion] => bla bla bla [institucion] => 5 [estadoestudio] => Titulado [anoegresosuperior] => 2007 )
+        $_carrera[] = $v["carrera"];
+        $_mencion[] = $v["mencion"];
+        $_institucion[] = $v["institucion"];
+        $_estadoestudio[] = $v["estadoestudio"];
+        $_anoegresosuperior[] = $v["anoegresosuperior"];
+    }
+} else {
+    echo $curriculum->carrera;
+}
+
+
+if ($_SESSION["curriculum"]["add_experiencia"]) {
+    $curriculum->carrera = implode(";", $_carrera);
+    $curriculum->mencion = implode(";", $_mencion);
+    $curriculum->institucion = implode(";", $_institucion);
+    $curriculum->estadoestudio = implode(";", $_estadoestudio);
+    $curriculum->anoegresosuperior = implode(";", $_anoegresosuperior);
+}
+
+
 if (isset($_POST["anolaboral1"])) {
     $id = md5($_POST["anolaboral1"].$_POST["anolaboral2"].$_POST["cargo"].$_POST["empresa"].$_POST["objetivos"].$_POST["logros"]);
 

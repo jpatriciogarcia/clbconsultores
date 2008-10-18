@@ -41,4 +41,3 @@ class Institucion extends ADOdb_Active_Record{
     var $_table = 'mgg_instituciones';
 }
 $institucion = new Institucion();
-?>
