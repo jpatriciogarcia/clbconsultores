@@ -68,7 +68,6 @@ $curriculum->anoegresosuperior = implode(";", $_anoegresosuperior);
 $curriculum->Save();
 
 
-print_r($_SESSION["curriculum"]["add_carreras"]);
 
 // Listar carreras
 if (sizeof($_SESSION["curriculum"]["add_carreras"])) {
