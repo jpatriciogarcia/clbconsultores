@@ -86,11 +86,15 @@
             </select>
             </td>
         </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-        </tr>
-      </table>
+      <tr>
+        <td>&nbsp;</td>
+        <td>[<a href="javascript:;" onclick="javascript:;AgregarSoftware()">Agregar software</a>]</td>
+      </tr>
+    </table>
+
+    <div id="div-software"></div>
+
+
       <table width="100%" border="0">
         <tr>
           <td colspan="4" bgcolor="#FFCC00">Idioma*</td>
@@ -223,4 +227,5 @@ Otro
 
 <script>
 VerExperiencia();
+VerSoftware();
 </script>
