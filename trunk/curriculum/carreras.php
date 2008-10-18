@@ -12,7 +12,7 @@ if ( ! isset($_POST["id"]) and ! isset($_POST["carrera"]) ) {
     $_anoegresosuperior = explode(";", $curriculum->anoegresosuperior);
 
     foreach ($_carrera as $k => $v) {
-        if (trim($_carrera[$k])) {
+        if (trim($_carrera[$k]) != "") {
             $id = md5($_carrera[$k].$_mencion[$k].$_institucion[$k].$_estadoestudio[$k].$_anoegresosuperior[$k]);
 
             $_SESSION["curriculum"]["add_carreras"][$id] = array(
@@ -50,12 +50,14 @@ if (isset($_POST["carrera"])) {
 // Grabar carreras
 $_carrera = $_mencion = $_institucion = $_estadoestudio = $_anoegresosuperior = array();
 $curriculum->Load('rut=?', array($_SESSION['curriculum']['rut']));
-foreach ($_SESSION["curriculum"]["add_carreras"] as $v) {
-    $_carrera[] = $v["carrera"];
-    $_mencion[] = str_replace(";", " ", $v["mencion"]);
-    $_institucion[] = $v["institucion"];
-    $_estadoestudio[] = $v["estadoestudio"];
-    $_anoegresosuperior[] = $v["anoegresosuperior"];
+if (sizeof($_SESSION["curriculum"]["add_carreras"])) {
+    foreach ($_SESSION["curriculum"]["add_carreras"] as $v) {
+        $_carrera[] = $v["carrera"];
+        $_mencion[] = str_replace(";", " ", $v["mencion"]);
+        $_institucion[] = $v["institucion"];
+        $_estadoestudio[] = $v["estadoestudio"];
+        $_anoegresosuperior[] = $v["anoegresosuperior"];
+    }
 }
 
 $curriculum->carrera = implode(";", $_carrera);
@@ -65,6 +67,8 @@ $curriculum->estadoestudio = implode(";", $_estadoestudio);
 $curriculum->anoegresosuperior = implode(";", $_anoegresosuperior);
 $curriculum->Save();
 
+
+print_r($_SESSION["curriculum"]["add_carreras"]);
 
 // Listar carreras
 if (sizeof($_SESSION["curriculum"]["add_carreras"])) {
