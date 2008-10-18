@@ -125,8 +125,6 @@ if($_POST["paso"]==2){ //guardar datos del paso1
     $curriculum->Load('rut=?', array($_SESSION['curriculum']['rut']));
 
     //guardar los datos del formulario paso3
-    $curriculum->software = $_POST["software"];
-    $curriculum->nivelsoftware = $_POST["nivelsoftware"];
 
     //idiomas
     if(isset($_POST['ingles'])){
