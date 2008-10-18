@@ -52,7 +52,7 @@
         </tr>
         <tr>
           <td>Menci&oacute;n</td>
-          <td><input name="mencion" type="text" id="mencion" value="<?php echo $curriculum->mencion; ?>" /></td>
+          <td><input name="mencion" type="text" id="mencion" value="<?php /*echo $curriculum->mencion;*/ ?>" /></td>
         </tr>
         <tr>
           <td>Instituci&oacute;n</td>

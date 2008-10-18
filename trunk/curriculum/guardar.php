@@ -103,22 +103,8 @@ if($_POST["paso"]==2){ //guardar datos del paso1
     //fin son los del paso3
 
     //guardar los datos del formulario paso2
-    foreach ( $_SESSION["curriculum"]["add_experiencia"] as $v ) {
-        //( [carrera] => 5 [mencion] => bla bla bla [institucion] => 5 [estadoestudio] => Titulado [anoegresosuperior] => 2007 )
-        $_carrera[] = $v["carrera"];
-        $_mencion[] = $v["mencion"];
-        $_institucion[] = $v["institucion"];
-        $_estadoestudio[] = $v["estadoestudio"];
-        $_anoegresosuperior[] = $v["anoegresosuperior"];
-    }
-
     $curriculum->colegio = $_POST["colegio"];
     $curriculum->anoegresocolegio = $_POST["anoegresocolegio"];
-    $curriculum->carrera = implode(";", $_carrera);
-    $curriculum->mencion = implode(";", $_mencion);
-    $curriculum->institucion = implode(";", $_institucion);
-    $curriculum->estadoestudio = implode(";", $_estadoestudio);
-    $curriculum->anoegresosuperior = implode(";", $_anoegresosuperior);
     $curriculum->titulos = $_POST["titulos"];
     $curriculum->Save();
 
