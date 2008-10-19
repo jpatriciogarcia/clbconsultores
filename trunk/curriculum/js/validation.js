@@ -270,7 +270,7 @@ Validation.addAllThese([
 ['validate-selection', 'Por favor, escoja una opción', function(v,elm){
     return elm.options ? elm.selectedIndex > 0 : !Validation.get('IsEmpty').test(v);
 }],
-['validate-one-required', 'Please select one of the above options.', function (v,elm) {
+['validate-one-required', 'Por favor, seleccione una de las opciones anteriores.', function (v,elm) {
     var p = elm.parentNode;
     var options = p.getElementsByTagName('INPUT');
     return $A(options).any(function(elm) {
