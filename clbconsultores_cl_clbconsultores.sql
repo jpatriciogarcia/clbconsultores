@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 17-10-2008 a las 23:47:16
+-- Tiempo de generación: 19-10-2008 a las 21:57:33
 -- Versión del servidor: 5.0.45
 -- Versión de PHP: 5.2.5
 
@@ -806,7 +806,29 @@ CREATE TABLE `mgg_curriculum` (
 -- 
 
 INSERT INTO `mgg_curriculum` (`rut`, `password`, `nombres`, `apellido1`, `apellido2`, `presentacion`, `fnacimiento`, `genero`, `nacionalidad`, `estadocivil`, `direccion`, `region`, `provincia`, `comuna`, `fonocasa`, `fonomovil`, `fonooficina`, `email`, `colegio`, `anoegresocolegio`, `carrera`, `mencion`, `institucion`, `estadoestudio`, `anoegresosuperior`, `titulos`, `anolaboral`, `cargo`, `empresa`, `objetivos`, `logros`, `software`, `nivelsoftware`, `ingles`, `nivelingles`, `frances`, `nivelfrances`, `aleman`, `nivelaleman`, `espanol`, `nivelespanol`, `italiano`, `nivelitaliano`, `otro`, `nivelotro`, `experienciaextra`, `pretensionrenta`, `regionlaboral`, `disponibilidad`, `areainteres`, `acceso`) VALUES 
-(15536433, 'd754f7302e', 'JosÃ© Patricio', 'GarcÃ­a', 'GonzÃ¡lez', '', '1983-04-15', 'Masculino', 'Chilena', 'Soltero(a)', 'San Guillermo 0358', '13', '47', '328', '', '', '', '', 'Matte Mesias', 2000, '', '', '', '', '', '', '-', '', '', '', '', 'XP;XP;Windows', 'BÃ¡sico;Usuario;Avanzado', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0, '13', 'Inmediata', '', '0');
+(15536433, 'd754f7302e', 'JosÃ© Patricio', 'GarcÃ­a', 'GonzÃ¡lez', '', '1983-04-15', 'Masculino', 'Chilena', 'Soltero(a)', 'San Guillermo 0358', '13', '47', '328', '', '', '', '', 'Matte Mesias', 2000, '9;9', 'sdsd;asasaas', '10;10', 'Egresado;Egresado', '2004;2004', '', '-', '', '', '', '', 'XP;XP', 'BÃ¡sico;Usuario', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0, '13', 'Inmediata', '', '0');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `mgg_empresas`
+-- 
+
+CREATE TABLE `mgg_empresas` (
+  `id` int(11) NOT NULL auto_increment,
+  `nombre` varchar(80) collate utf8_spanish_ci NOT NULL,
+  `descripcion` text collate utf8_spanish_ci NOT NULL,
+  `mail` varchar(80) collate utf8_spanish_ci NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=6 ;
+
+-- 
+-- Volcar la base de datos para la tabla `mgg_empresas`
+-- 
+
+INSERT INTO `mgg_empresas` (`id`, `nombre`, `descripcion`, `mail`) VALUES 
+(1, 'Coca-Cola', '', ''),
+(2, 'LIDER', '', '');
 
 -- --------------------------------------------------------
 
@@ -1151,6 +1173,26 @@ INSERT INTO `mgg_provincias` (`id`, `relacion`, `nombre`) VALUES
 (51, 13, 'Talagante'),
 (52, 14, 'Ranco'),
 (53, 1, 'Del Tamarugal');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `mgg_puestos`
+-- 
+
+CREATE TABLE `mgg_puestos` (
+  `id` int(11) NOT NULL auto_increment,
+  `empresa` int(11) NOT NULL,
+  `puesto` varchar(80) collate utf8_spanish_ci NOT NULL,
+  `descripcion` text collate utf8_spanish_ci NOT NULL,
+  `vacantes` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `mgg_puestos`
+-- 
+
 
 -- --------------------------------------------------------
 
