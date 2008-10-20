@@ -41,3 +41,15 @@ class Institucion extends ADOdb_Active_Record{
     var $_table = 'mgg_instituciones';
 }
 $institucion = new Institucion();
+
+//Empresas que solicitan personal
+class Empresa extends ADOdb_Active_Record{
+    var $_table = 'mgg_empresas';
+}
+$Empresa = new Empresa();
+
+//Puestos de trabajos solicitados por las empresas
+class Puesto extends ADOdb_Active_Record{
+    var $_table = 'mgg_puestos';
+}
+$Puesto = new Puesto();
