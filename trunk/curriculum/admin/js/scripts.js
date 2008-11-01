@@ -21,3 +21,22 @@ function saveForm( form ) {
     }
 }
 
+
+function deleteEmpresa( id ) {
+    new Ajax.Updater('div-form', 'empresa.php', {
+        evalScripts: true,
+        parameters: {id: id, action: 'delete'},
+        onLoading: function() { $('loading').show(); },
+        onComplete: function() { $('loading').hide(); }
+    });
+}
+
+
+function updateEmpresa( id ) {
+    new Ajax.Updater('div-form', 'empresa.php', {
+        evalScripts: true,
+        parameters: {id: id, action: 'edit'},
+        onLoading: function() { $('loading').show(); },
+        onComplete: function() { $('loading').hide(); }
+    });
+}
