@@ -106,7 +106,7 @@ if (isset($_POST['action']) ? $_POST['action'] == 'link' : false) {
         <tr>
           <th>Link</th>
           <td>:</td>
-          <td>' . '' . '</td>
+          <td><a href="' . $_SERVER['SERVER_NAME'] . '/curriculum/?uniqueid=' . md5($Empresa->id.$Puesto->id) . '">' . $_SERVER['SERVER_NAME'] . '/curriculum/?uniqueid=' . md5($Empresa->id.$Puesto->id) . '</a></td>
         </tr>
       </table>
     </body>
@@ -114,8 +114,6 @@ if (isset($_POST['action']) ? $_POST['action'] == 'link' : false) {
     ';
 
     $to = $Empresa->nombre . " <" . $Empresa->mail . ">";
-    echo $to;
-    $to="jpatriciogarcia@gmail.com";
     $subject = "CLB Consultores";
 
     // Para enviar correo HTML, la cabecera Content-type debe definirse
