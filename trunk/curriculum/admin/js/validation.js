@@ -232,7 +232,7 @@ Validation.addAllThese([
 ['validate-number', 'Please enter a valid number in this field.', function(v) {
     return Validation.get('IsEmpty').test(v) || (!isNaN(v) && !/^\s+$/.test(v));
 }],
-['validate-digits', 'Please use numbers only in this field. please avoid spaces or other characters such as dots or commas.', function(v) {
+['validate-digits', 'Por favor, utilice sólo números en este campo. Evite espacios u otros caracteres, tales como puntos o comas.', function(v) {
     return Validation.get('IsEmpty').test(v) ||  !/[^\d]/.test(v);
 }],
 ['validate-alpha', 'Please use letters only (a-z) in this field.', function (v) {
