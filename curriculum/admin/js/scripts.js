@@ -66,8 +66,8 @@ function sendLink( puesto ) {
     new Ajax.Request('puesto.php', {
         evalScripts: true,
         parameters: {puesto: puesto, action: 'link'},
-        onLoading: function() { $('loading').show(); },
-        onComplete: function() { $('loading').hide(); }
+        onLoading: function(transport) { $('loading').show(); },
+        onComplete: function(transport) { $('loading').hide(); transport.responseText.evalScripts();}
     });
 }
 
