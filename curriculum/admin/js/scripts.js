@@ -40,3 +40,34 @@ function updateEmpresa( id ) {
         onComplete: function() { $('loading').hide(); }
     });
 }
+
+
+function deletePuesto( id ) {
+    new Ajax.Updater('div-form', 'puesto.php', {
+        evalScripts: true,
+        parameters: {id: id, action: 'delete'},
+        onLoading: function() { $('loading').show(); },
+        onComplete: function() { $('loading').hide(); }
+    });
+}
+
+
+function updatePuesto( id ) {
+    new Ajax.Updater('div-form', 'puesto.php', {
+        evalScripts: true,
+        parameters: {id: id, action: 'edit'},
+        onLoading: function() { $('loading').show(); },
+        onComplete: function() { $('loading').hide(); }
+    });
+}
+
+
+function sendLink( puesto ) {
+    new Ajax.Request('puesto.php', {
+        evalScripts: true,
+        parameters: {puesto: puesto, action: 'link'},
+        onLoading: function() { $('loading').show(); },
+        onComplete: function() { $('loading').hide(); }
+    });
+}
+
