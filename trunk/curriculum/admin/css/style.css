@@ -1,99 +1,205 @@
 body {
-	color: #333;
-	padding: 0 30px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 76%;
+margin:0;
+padding:0;
+border:none;
+font-size:4.0mm;
+color:black;
 }
 
-.panel {
-	clear: both;
-	display: none;
-	border: 3px solid #CCC;
-	padding: 1em;
-}
-.panel.active-tab-body {
-	display: block;
-}
-#tabs {
-	list-style: none;
+html{
+height:100%;
+min-height:100%;
+background:#FFF url(../images/bg_body.png) repeat-x;
 }
 
-#tabs li {
-	float: left;
-}
+html>body
+{height:auto;min-height:100%}
 
-#tabs a {
-	float: left;
-	padding: 5px 8px;
-	margin-left: 6px;
-	background-color: #F2F2F2;
-	text-decoration: none;
-	color: #999999;
-}
 
-#tabs a.active-tab {
-	background-color: #CCC;
-	border-top: 3px solid #999;
-	padding-top: 3px;
-	color: #000;
-}
-input.disabled {
-	border: 1px solid #F2F2F2;
-	background-color: #F2F2F2;
-}
+.titulo_pagina{
+	font-size:7mm;
+	color: #FFFFFF;
 
-input.required, textarea.required {
-	border: 1px solid #00A8E6;
-}
-input.validation-failed, textarea.validation-failed {
-	border: 1px solid #FF3300;
-	color : #FF3300;
-}
-input.validation-passed, textarea.validation-passed {
-	border: 1px solid #00CC00;
-	color : #000;
-}
-
-.validation-advice {
-	margin: 5px 0;
-	padding: 5px;
-	background-color: #FF3300;
-	color : #FFF;
-	font-weight: bold;
-}
-
-.custom-advice {
-	margin: 5px 0;
-	padding: 5px;
-	background-color: #C8AA00;
-	color : #FFF;
-	font-weight: bold;
-}
-
-fieldset {
-	padding: 1em;
-	margin-bottom: 0.5em;
-}
-
-label {
-	font-weight: bold;
-}
-.form-row {
-	clear: both;
-	padding: 0.5em;
-}
-
-.field-label {
 
 }
 
-.field-widget {
+
+
+
+
+
+.titulo_menu{
+	font-size:5.0mm;
+	color:black;
 
 }
 
-#loading {
-	position: absolute;
-	top: 5px;
-	/*padding-top: 10px;*/
-	right: 15px;
+.titulo_ingreso{
+	font-size:6.0mm;
+	color:black;
+
 }
+
+.titulo_logeo{
+	font-size:5.0mm;
+	color:black;
+
+}
+
+.titulo_busquedaavanzada{
+	font-size:3.0mm;
+	color:black;
+
+}
+
+
+#marco {
+	width:960px;
+	margin:0 auto;
+	padding:0;
+	border:0;
+
+	}
+
+#cierresesion {
+	float:right;
+	padding:0;
+
+	/*heigh:100px;
+	width:200px;
+	right:100px;
+	color:#FFFFFF;
+
+
+      font-size:93%;
+	line-height:normal;*/
+	text-decoration: underline;
+
+        }
+
+
+  #usuario {
+   /*position:absolute;*/
+	float:left;
+	text-align:left;
+	/*top:5px;*/
+
+	/*heigh:100px;
+	width:200px;
+	left:100px;
+	top:5px;
+	color:#FFFFFF;
+	text-align:left;
+	background:#BBD9EE;
+     font-size:93%;*/
+	line-height:normal;
+			          }
+
+#tituloprincipal {
+/*	background:#BBD9EE;*/
+	text-align:center;
+
+		}
+
+#menu {
+	background-color: #FFFFCC;
+	text-align:center;
+	color:#FFFFFF;
+	}
+
+#buscador {
+	/*background:#BBD9EE;*/
+	text-align:center;
+	float:left;
+	}
+
+#imprimir {
+	/*background:#BBD9EE;*/
+	float:right;
+	text-align:center;
+	}
+#mensajetabla {
+	/*background-color: #FFFF99;*/
+	text-align:center;
+	}
+
+/* ----- TABLA ----- */
+
+table.estilo1 {
+		border-collapse:collapse;
+		background:#EFF4FB url(../images/teaser.gif) repeat-x;
+		border-top:1px solid #686868;
+		border-left:1px solid #686868;
+		border-right:1px solid #686868;
+		border-bottom:1px solid #686868;
+		font:0.8em/145% 'Trebuchet MS',helvetica,arial,verdana;
+		color: #333;
+}
+
+.estilo1 td.estilo1, th.estilo1 {
+		padding:5px;
+}
+
+.estilo1 caption {
+		padding: 0 0 .5em 0;
+		text-align: left;
+		font-size: 1.4em;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #333;
+		background: transparent;
+}
+
+/* =links
+----------------------------------------------- */
+
+.estilo1 table a {
+		color:#950000;
+		text-decoration:none;
+}
+
+.estilo1 table a:link {}
+
+.estilo1 table a:visited {
+		font-weight:normal;
+		color:#666;
+		text-decoration: line-through;
+}
+
+.estilo1 table a:hover {
+		border-bottom: 1px dashed #bbb;
+}
+
+/* =head =foot
+----------------------------------------------- */
+
+.estilo1 thead.estilo1 th.estilo1, tfoot.estilo1 th.estilo1, tfoot.estilo1 td.estilo1 {
+		background:#333 url(../images/llsh.gif) repeat-x;
+		color:#fff
+}
+
+.estilo1 tfoot.estilo1 td.estilo1 {
+		text-align:right
+}
+
+/* =body
+----------------------------------------------- */
+
+.estilo1 tbody.estilo1 th.estilo1, tbody.estilo1 td.estilo1 {
+		border-bottom: dotted 1px #333;
+}
+
+.estilo1 tbody.estilo1 th.estilo1 {
+		white-space: nowrap;
+}
+
+.estilo1 tbody.estilo1 th.estilo1 a.estilo1 {
+		color:#333;
+}
+
+.estilo1 .odd {}
+
+.estilo1 tbody tr:hover {
+		background:#fafafa
+}
+
