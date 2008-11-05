@@ -1,4 +1,23 @@
 
+function LogIn() {
+    new Ajax.Request('login.php', {
+        evalScripts: true,
+        parameters: {username: $('username').value, password: $('password').value},
+        onLoading: function() { $('loading').show(); },
+        onComplete: function(transport) { transport.responseText.evalScripts(); }
+    });
+}
+
+
+function LogOut() {
+    new Ajax.Request('logout.php', {
+        evalScripts: true,
+        onLoading: function() { $('loading').show(); },
+        onComplete: function(transport) { transport.responseText.evalScripts(); }
+    });
+}
+
+
 function getUrl(url, div) {
     new Ajax.Updater(div, url, {
         evalScripts: true,
