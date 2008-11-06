@@ -49,8 +49,8 @@ if (isset($_GET['action']) ? $_GET['action'] == 'edit' : false) {
 	 </tr>
 	</table>
 	<input type="button" onclick="sendLink(<?php echo $Puesto->id; ?>);" value="Enviar Link" />
-	<input type="button" onclick="saveForm('frm-create-puesto');" value="Grabar" />
-	<input type="button" onclick="getUrl('puesto.php', 'div-main');" value="Cancelar" />
+	<input type="button" onclick="addCampaign();" value="Grabar" />
+	<input type="button" onclick="getUrl('puesto.php', 'marcotabla');" value="Cancelar" />
 	<?php
 	die();
 }
@@ -59,20 +59,33 @@ if (isset($_GET['action']) ? $_GET['action'] == 'edit' : false) {
 // GRABAR LOS DATOS
 if (isset($_POST['action']) ? $_POST['action'] == 'save' : false) {
 
-    if ($Puesto->Load('nombre=?', array($_POST["nombre"])) && $_POST["id"]==0) {
+    if ($Puesto->Load('puesto=?', array($_POST["puesto"])) && $_POST["id"]==0) {
         echo "<script>alert('Ya existe una puesto con el mismo nombre.');</script>";
         die();
     }
 
     $Puesto = new Puesto();
-    $Puesto->Load('id=?', array($_POST["id"]));
-    $Puesto->empresa = $_POST["empresa"];
-    $Puesto->puesto = $_POST["puesto"];
-    $Puesto->descripcion = $_POST["descripcion"];
-    $Puesto->vacantes = $_POST["vacantes"];
+
+    if ($Puesto->Load('id=?', array($_POST["id"]))) {
+        $Puesto->empresa = $_POST["empresa"];
+        $Puesto->puesto = $_POST["puesto"];
+        $Puesto->descripcion = $_POST["descripcion"];
+        $Puesto->vacantes = $_POST["vacantes"];
+    }
+    else {
+        $Puesto->empresa = $_POST["empresa"];
+        $Puesto->puesto = $_POST["puesto"];
+        $Puesto->descripcion = $_POST["descripcion"];
+        $Puesto->vacantes = $_POST["vacantes"];
+        $Puesto->uniqueid = '0';
+        $Puesto->Save();
+
+        $Puesto->uniqueid = md5($_POST["empresa"].$Puesto->id);
+    }
+
     $Puesto->Save();
 
-    echo "<script>getUrl('puesto.php', 'div-main');</script>";
+    echo "<script>getUrl('puesto.php', 'marcotabla');</script>";
     die();
 }
 
@@ -145,17 +158,15 @@ foreach ($Puesto->Find('1=? order by empresa', array(1)) as $Puesto) {
 
 ?>
 
-<form id="frm-create-puesto" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <div id="div-form">
   <p><a href="javascript:;" onclick="getUrl('puesto.php?action=edit', 'div-form'); return false;">Agregar</a></p>
 </div>
-</form>
 
-<table>
- <tr>
-  <th>Eliminar</th>
-  <th>Editar</th>
-  <th>Puesto</th>
- </tr>
+    <table width="90%" border="1" align="center" cellpadding="0" cellspacing="0" class="estilo1">
+
+            <td width="17%" valign="top">Eliminar</td>
+            <td width="17%" valign="top">Editar</td>
+            <td width="14%" valign="top">Puesto</td>
+          </tr>
  <?php echo $html_listado_puestos; ?>
 </table>

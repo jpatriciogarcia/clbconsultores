@@ -37,7 +37,7 @@ require_once("../conexion.php");
 
   <div id="menu">
       <p class="titulo_menu">
-      <a href="ingreso_socio.php">Nuevo Curriculum</a> / <a href="completa.php">Lista completa </a>/ <a href=	"al_dia.php">Campa&ntilde;as </a>/ <a href="no_pagan.php">Busqueda Avanzada</a></p>
+      <a href="ingreso_socio.php">Nuevo Curriculum</a> / <a href="javascript:;" onclick="getUrl('listado.php', 'marcotabla')">Lista completa </a>/ <a href=	"javascript:;" onclick="getUrl('puesto.php', 'marcotabla')">Campa&ntilde;as </a>/ <a href="javascript:;" onclick="getUrl('busqueda_avanzada.php', 'marcotabla')">Busqueda Avanzada</a></p>
   </div>
 
 
@@ -45,10 +45,10 @@ require_once("../conexion.php");
    	  <table width="450" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td><input name="patron" type="text" size="50" /></td>
-          <td>Buscar</td>
+          <td><img src="images/find.png" /></td>
         </tr>
         <tr>
-          <td class="titulo_busquedaavanzada"><a href="javascript:;" onclick="getUrl('busqueda_avanzada.php', 'marcotabla')">Búsqueda Avanzada</a></td>
+          <td class="titulo_busquedaavanzada"></td>
           <td>&nbsp;</td>
         </tr>
    	  </table>
@@ -57,7 +57,7 @@ require_once("../conexion.php");
     <div id="imprimir">
       <table width="250" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td>Exportar Excel</td>
+          <td><img src="images/excel.png" /></td>
           <td><img src="images/printer1.png" /></td>
         </tr>
       </table>

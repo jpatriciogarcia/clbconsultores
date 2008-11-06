@@ -37,15 +37,18 @@ function advancedFind() {
     });
 }
 
-function saveForm( form ) {
-    var valid = new Validation(form, {onSubmit: false});
+function addCampaign( ) {
+
+    $('form-main').action = 'puesto.php';
+
+    var valid = new Validation('form-main', {onSubmit: false});
     var result = valid.validate();
 
-    $(form).enable();
+    $('form-main').enable();
     if ( result ) {
-        $(form).request({
-            onLoading: function(transport) { $('loading').show(); },
-            onComplete: function(transport) { $('loading').hide(); transport.responseText.evalScripts(); }
+        $('form-main').request({
+            onLoading: function(transport) { },
+            onComplete: function(transport) { transport.responseText.evalScripts(); }
         });
     }
 }
