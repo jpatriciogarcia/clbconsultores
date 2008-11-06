@@ -21,11 +21,21 @@ function LogOut() {
 function getUrl(url, div) {
     new Ajax.Updater(div, url, {
         evalScripts: true,
-        onLoading: function() { $('loading').show(); },
-        onComplete: function() { $('loading').hide(); }
+        onLoading: function() { new Effect.Opacity(div, {from: 1, to: 0}); },
+        onComplete: function() { new Effect.Opacity(div, {from: 0, to: 1}); }
     });
 }
 
+
+function advancedFind() {
+
+    $('form-main').action = 'listado.php';
+
+    $('form-main').request({
+        onLoading: function() { new Effect.Opacity('marcotabla', {from: 1, to: 0}); },
+        onComplete: function(transport) { new Effect.Opacity('marcotabla', {from: 0, to: 1}); $('marcotabla').update(transport.responseText) }
+    });
+}
 
 function saveForm( form ) {
     var valid = new Validation(form, {onSubmit: false});
