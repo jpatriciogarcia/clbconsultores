@@ -1,37 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Listado Completo</title>
-
-<link  rel="stylesheet" href="print.css" type="text/css" media="print" />
-<link href="css/style.css" rel="stylesheet" type="text/css">
-</head>
-
-<body>
-
-<div id="marco">
-
-	<div id="usuario">
-      <p>Bienvenido Juan P�rez</p>
-      	</div>
-
-      <div id="cierresesion">
-      <p>Cerrar Sesi�n</p>
-      </div>
-
-  <div id="tituloprincipal">
-    <p class="titulo_pagina">Sistema de Administraci&oacute;n de Curriculums</p>
-    </div>
-
-
-
-  <div id="menu">
-    <p class="titulo_menu">
-      <a href="ingreso_socio.php">Nuevo Curriculum</a> / <a href="completa.php">Lista completa </a>/ <a href=	"al_dia.php">Campa&ntilde;as </a>/ <a href="no_pagan.php">Busqueda Avanzada</a></p>
-  </div>
-
-
-    <div id="marcotabla"><div align="center">
+<div align="center">
         <table width="800" border="0" align="center" class="estilo1">
           <tbody>
             <tr>
@@ -1015,37 +982,10 @@
           <tr>
             <td colspan="4"><p>&nbsp;</p>
             <p align="center"><span class="Estilo5">
-              <input name="submit" id="submit" value="Buscar" type="submit">
+              <input name="submit" id="submit" value="Buscar" type="button" onclick="advancedFind();">
             </span><span class="Estilo5">
-             <input name="submit2" id="submit2" value="Limpliar" type="submit">
+             <input name="submit2" id="submit2" value="Limpliar" type="button">
             </span></p></td>
           </tr>
         </table>
       </div>
-  </div>
-  <p align="center">
-    Saltar a P&aacute;g. :
-    1&nbsp;		<a href="completa.php?c=2&p=2">2</a>&nbsp;
-      <a href="completa.php?c=2&p=3">3</a>&nbsp;
-      <a href="completa.php?c=2&p=4">4</a>&nbsp;
-      <a href="completa.php?c=2&p=5">5</a>&nbsp;
-      <a href="completa.php?c=2&p=6">6</a>&nbsp;
-      <a href="completa.php?c=2&p=7">7</a>&nbsp;
-      <a href="completa.php?c=2&p=8">8</a>&nbsp;
-      <a href="completa.php?c=2&p=9">9</a>&nbsp;
-      <a href="completa.php?c=2&p=10">10</a>&nbsp;
-      <a href="completa.php?c=2&p=11">11</a>&nbsp;
-      <a href="completa.php?c=2&p=12">12</a>&nbsp;
-      <a href="completa.php?c=2&p=13">13</a>&nbsp;
-      <a href="completa.php?c=2&p=14">14</a>&nbsp;
-      <a href="completa.php?c=2&p=15">15</a>&nbsp;
-      <a href="completa.php?c=2&p=16">16</a>&nbsp;
-      <a href="completa.php?c=2&p=17">17</a>&nbsp;
-      <a href="completa.php?c=2&p=18">18</a>&nbsp;
-      <a href="completa.php?c=2&p=19">19</a>&nbsp;
-      <a href="completa.php?c=2&p=20">20</a>&nbsp;
-                    <a href="completa.php?c=2&p=21">21</a>&nbsp;
-      <a href="completa.php?c=2&p=22">22</a>&nbsp;  </p>
-</div>
-</body>
-</html>
