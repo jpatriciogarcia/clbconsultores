@@ -53,3 +53,4 @@ class Puesto extends ADOdb_Active_Record{
     var $_table = 'mgg_puestos';
 }
 $Puesto = new Puesto();
+
