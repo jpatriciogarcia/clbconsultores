@@ -1,9 +1,24 @@
 
+function NuevoCurriculum() {
+    var win = new Window({
+        url: '../',
+        title: 'Nuevo Curriculum',
+        className: 'mac_os_x',
+        resizable: false,
+        maximizable: false,
+        minimizable: false,
+        draggable: false,
+        width: 750,
+        height: 550
+    });
+    win.showCenter(true);
+}
+
 function LogIn() {
     new Ajax.Request('login.php', {
         evalScripts: true,
         parameters: {username: $('username').value, password: $('password').value},
-        onLoading: function() { $('loading').show(); },
+        //onLoading: function() { $('loading').show(); },
         onComplete: function(transport) { transport.responseText.evalScripts(); }
     });
 }
@@ -12,7 +27,7 @@ function LogIn() {
 function LogOut() {
     new Ajax.Request('logout.php', {
         evalScripts: true,
-        onLoading: function() { $('loading').show(); },
+        //onLoading: function() { $('loading').show(); },
         onComplete: function(transport) { transport.responseText.evalScripts(); }
     });
 }
