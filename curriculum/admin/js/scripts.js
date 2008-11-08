@@ -1,18 +1,27 @@
 
 function NuevoCurriculum() {
+    /*
     var win = new Window({
-        url: '../',
-        title: 'Nuevo Curriculum',
-        className: 'mac_os_x',
-        resizable: false,
-        maximizable: false,
-        minimizable: false,
-        draggable: false,
-        width: 750,
-        height: 550
+    url: '../',
+    title: 'Nuevo Curriculum',
+    //className: 'mac_os_x',
+    resizable: false,
+    maximizable: false,
+    minimizable: false,
+    draggable: false,
+    width: 750,
+    height: 550
     });
     win.showCenter(true);
+    */
+    window.open('../', 'Curriculum', 'width=800, height=600, scrollbars=yes');
+
 }
+
+function EditCurriculum(rut) {
+    window.open('modificar.php?rut=' + rut, 'Curriculum', 'width=800, height=600, scrollbars=yes');
+}
+
 
 function LogIn() {
     new Ajax.Request('login.php', {

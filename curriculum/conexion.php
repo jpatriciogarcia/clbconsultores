@@ -2,6 +2,8 @@
 session_start();
 require_once('adodb/adodb.inc.php');
 require_once('adodb/adodb-active-record.inc.php');
+require_once('class.GenericEasyPagination.php');
+
 
 $conexion = NewADOConnection('mysql://clbconsultores:clb72164@localhost/clbconsultores_cl_clbconsultores');
 //$conexion->debug = true;
@@ -54,3 +56,7 @@ class Puesto extends ADOdb_Active_Record{
 }
 $Puesto = new Puesto();
 
+
+
+
+define('RECORDS_BY_PAGE', 2);
