@@ -10,18 +10,14 @@ require_once("../conexion.php");
 
 <script type="text/javascript" src="js/prototype.js"> </script>
 <script type="text/javascript" src="js/effects.js"> </script>
-
 <script type="text/javascript" src="js/window.js"> </script>
-<script type="text/javascript" src="js/debug.js"> </script>
-
-<link href="css/themes/default.css" rel="stylesheet" type="text/css" />
-<link href="css/themes/mac_os_x.css" rel="stylesheet" type="text/css" />
-
 <script type="text/javascript" src="js/validation.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
 
-
+<link href="css/themes/default.css" rel="stylesheet" type="text/css" />
+<link href="css/themes/mac_os_x.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
