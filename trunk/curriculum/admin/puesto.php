@@ -126,21 +126,37 @@ if (isset($_POST['action']) ? $_POST['action'] == 'link' : false) {
     </html>
     ';
 
-    $to = $Empresa->nombre . " <" . $Empresa->mail . ">";
-    $subject = "CLB Consultores";
+    $mail             = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->SMTPAuth   = true;                  // enable SMTP authentication
+    $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+    $mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+    $mail->Port       = 465;                   // set the SMTP port for the GMAIL server
 
-    // Para enviar correo HTML, la cabecera Content-type debe definirse
-    $additional_headers  = 'MIME-Version: 1.0' . "\r\n";
-    $additional_headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $mail->Username   = "clbconsultores@gmail.com";  // GMAIL username
+    $mail->Password   = "password2008";            // GMAIL password
 
-    // Cabeceras adicionales
-    //$additional_headers .= 'To: Contacto CLB Consultores <' . $to . '>' . "\r\n";
-    $additional_headers .= 'From: CLB Consultores <info@clbconsultores.cl>' . "\r\n";
-    $additional_headers .= 'Bcc: JGG <jpatriciogarcia@gmail.com>' . "\r\n";
+    $mail->AddReplyTo("info@clbconsultores.cl","CLB Consultores");
 
-    mail($to, $subject, $message, $additional_headers);
+    $mail->From       = "info@clbconsultores.cl";
+    $mail->FromName   = "CLB Consultores";
 
-    echo "<script>alert('Link enviado.');</script>";
+    $mail->Subject    = "CLB Consultores";
+
+    //$mail->Body       = "Hi,<br>This is the HTML BODY<br>";                      //HTML Body
+    $mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+    $mail->WordWrap   = 50; // set word wrap
+
+    $mail->MsgHTML($message);
+    $mail->AddAddress($Empresa->mail, $Empresa->nombre);
+    $mail->IsHTML(true); // send as HTML
+
+    if(!$mail->Send()) {
+        echo "<script>alert('Mailer Error.');</script>";
+    } else {
+        echo "<script>alert('Link enviado.');</script>";
+    }
+
     die();
 }
 
