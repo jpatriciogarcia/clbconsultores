@@ -27,8 +27,8 @@ function LogIn() {
     new Ajax.Request('login.php', {
         evalScripts: true,
         parameters: {username: $('username').value, password: $('password').value},
-        //onLoading: function() { $('loading').show(); },
-        onComplete: function(transport) { transport.responseText.evalScripts(); }
+        onLoading: function() { $('loading').show(); },
+        onComplete: function(transport) { $('loading').hide(); transport.responseText.evalScripts(); }
     });
 }
 
@@ -36,7 +36,7 @@ function LogIn() {
 function LogOut() {
     new Ajax.Request('logout.php', {
         evalScripts: true,
-        //onLoading: function() { $('loading').show(); },
+        onLoading: function() { $('loading').show(); },
         onComplete: function(transport) { transport.responseText.evalScripts(); }
     });
 }
@@ -45,8 +45,8 @@ function LogOut() {
 function getUrl(url, div) {
     new Ajax.Updater(div, url, {
         evalScripts: true,
-        onLoading: function() { new Effect.Opacity(div, {from: 1, to: 0}); },
-        onComplete: function() { new Effect.Opacity(div, {from: 0, to: 1}); }
+        onLoading: function() { $('loading').show(); new Effect.Opacity(div, {from: 1, to: 0}); },
+        onComplete: function() { $('loading').hide(); new Effect.Opacity(div, {from: 0, to: 1}); }
     });
 }
 
@@ -56,8 +56,8 @@ function advancedFind() {
     $('form-main').action = 'listado.php';
 
     $('form-main').request({
-        onLoading: function() { new Effect.Opacity('marcotabla', {from: 1, to: 0}); },
-        onComplete: function(transport) { new Effect.Opacity('marcotabla', {from: 0, to: 1}); $('marcotabla').update(transport.responseText) }
+        onLoading: function() { $('loading').show(); new Effect.Opacity('marcotabla', {from: 1, to: 0}); },
+        onComplete: function(transport) { $('loading').hide(); new Effect.Opacity('marcotabla', {from: 0, to: 1}); $('marcotabla').update(transport.responseText) }
     });
 }
 
@@ -71,8 +71,8 @@ function addCampaign( ) {
     $('form-main').enable();
     if ( result ) {
         $('form-main').request({
-            onLoading: function(transport) { },
-            onComplete: function(transport) { transport.responseText.evalScripts(); }
+            onLoading: function(transport) { $('loading').show(); },
+            onComplete: function(transport) { $('loading').hide(); transport.responseText.evalScripts(); }
         });
     }
 }

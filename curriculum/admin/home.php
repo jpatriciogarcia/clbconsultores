@@ -21,7 +21,7 @@ require_once("../conexion.php");
 </head>
 
 <body>
-
+<div id="loading" style="display: none;"><img src="../imagenes/cargando.gif" />Cargando...</div>
 <div id="marco">
 
 	<div id="usuario">

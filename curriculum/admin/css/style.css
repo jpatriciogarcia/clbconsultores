@@ -203,3 +203,11 @@ table.estilo1 {
 		background:#fafafa
 }
 
+
+#loading {
+	position: absolute;
+	top: 5px;
+	/*padding-top: 10px;*/
+	right: 15px;
+	background-color: #ff0000;
+}

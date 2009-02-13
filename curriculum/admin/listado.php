@@ -4,7 +4,7 @@ require_once("../conexion.php");
 
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $sql = "select * from {$curriculum->_table} order by apellido1";
-$Curriculum = $curriculum->DB()->PageExecute($sql, RECORDS_BY_PAGE, $page);
+$Curriculum = $conexion->PageExecute($sql, RECORDS_BY_PAGE, $page);
 
 
 

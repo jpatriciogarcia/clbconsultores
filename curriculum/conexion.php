@@ -2,6 +2,7 @@
 session_start();
 require_once('adodb/adodb.inc.php');
 require_once('adodb/adodb-active-record.inc.php');
+require_once('class.phpmailer.php');
 require_once('class.GenericEasyPagination.php');
 
 

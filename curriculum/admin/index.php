@@ -64,4 +64,5 @@
 </p>
 <p>&nbsp;</p>
         <div align="center"></div>
+        <div id="loading" style="display: none;"><img src="../imagenes/cargando.gif" />Cargando...</div>
 </body></html>
