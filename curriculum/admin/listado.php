@@ -18,11 +18,13 @@ $Pagination->setTotalRecords($Curriculum->_maxRecordCount);
 
 <table width="90%" border="1" align="center" cellpadding="0" cellspacing="0" class="estilo1">
 <tr>
+<td valign="top">RUT</td>
 <td width="17%" valign="top"><a href="completa.php?p=1&c=2">Apellido Paterno</a></td>
 <td width="17%" valign="top"><a href="completa.php?p=1&c=3">Apellido Materno</a></td>
 <td width="14%" valign="top"><div align="center" class="style10"><a href="completa.php?p=1&c=4" class="estilo1">Nombre</a></div></td>
 <td width="21%" valign="top"><div align="center">Region</div>	</td>
 <td width="21%" valign="top">Comuna</td>
+<td width="21%" valign="top">Disponibilidad</td>
 <td width="17%" valign="top"><div align="center" class="style7">&nbsp;</div></td>
 </tr>
 
@@ -33,11 +35,13 @@ while (! $Curriculum->EOF ) {
     $comuna->Load('id=?', array($Curriculum->fields['comuna']));
     ?>
     <tr>
+        <td><?php echo ($Curriculum->fields['rut']); ?></td>
         <td><?php echo ($Curriculum->fields['apellido1']); ?></td>
         <td><?php echo ($Curriculum->fields['apellido2']); ?></td>
         <td><?php echo ($Curriculum->fields['nombres']); ?></td>
         <td><?php echo htmlentities($region->nombre); ?></td>
         <td><?php echo htmlentities($comuna->nombre); ?></td>
+        <td><?php echo ($Curriculum->fields['disponibilidad']); ?></td>
         <td><div align="center"><a href="javascript:;" onclick="EditCurriculum(<?php echo $Curriculum->fields['rut']; ?>)">Editar</a></div></td>
     <?php
     $Curriculum->MoveNext();
