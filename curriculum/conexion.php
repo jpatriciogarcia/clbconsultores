@@ -60,4 +60,4 @@ $Puesto = new Puesto();
 
 
 
-define('RECORDS_BY_PAGE', 2);
+define('RECORDS_BY_PAGE', 10);
