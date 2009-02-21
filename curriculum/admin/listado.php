@@ -44,7 +44,7 @@ while (! $Curriculum->EOF ) {
         <td><?php echo htmlentities($region->nombre); ?></td>
         <td><?php echo htmlentities($comuna->nombre); ?></td>
         <td><?php echo ($Curriculum->fields['disponibilidad']); ?></td>
-        <td><?php echo date_format(new DateTime($Curriculum->fields['modificacion']), "d-m-Y"); ?></td>
+        <td><?php echo ($Curriculum->fields['modificacion']); ?></td>
         <td><div align="center"><a href="javascript:;" onclick="EditCurriculum(<?php echo $Curriculum->fields['rut']; ?>)">Editar</a></div></td>
         <td><div align="center"><a href="javascript:;" onclick="DeleteCurriculum(<?php echo $Curriculum->fields['rut']; ?>)">Eliminar</a></div></td>
     <?php
