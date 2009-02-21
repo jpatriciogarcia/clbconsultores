@@ -25,6 +25,8 @@ $Pagination->setTotalRecords($Curriculum->_maxRecordCount);
 <td width="21%" valign="top"><div align="center">Region</div>	</td>
 <td width="21%" valign="top">Comuna</td>
 <td width="21%" valign="top">Disponibilidad</td>
+<td width="21%" valign="top">Fecha</td>
+<td width="17%" valign="top"><div align="center" class="style7">&nbsp;</div></td>
 <td width="17%" valign="top"><div align="center" class="style7">&nbsp;</div></td>
 </tr>
 
@@ -42,7 +44,9 @@ while (! $Curriculum->EOF ) {
         <td><?php echo htmlentities($region->nombre); ?></td>
         <td><?php echo htmlentities($comuna->nombre); ?></td>
         <td><?php echo ($Curriculum->fields['disponibilidad']); ?></td>
+        <td><?php echo date_format(new DateTime($Curriculum->fields['modificacion']), "d-m-Y"); ?></td>
         <td><div align="center"><a href="javascript:;" onclick="EditCurriculum(<?php echo $Curriculum->fields['rut']; ?>)">Editar</a></div></td>
+        <td><div align="center"><a href="javascript:;" onclick="DeleteCurriculum(<?php echo $Curriculum->fields['rut']; ?>)">Eliminar</a></div></td>
     <?php
     $Curriculum->MoveNext();
 }

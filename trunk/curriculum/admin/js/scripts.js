@@ -22,6 +22,27 @@ function EditCurriculum(rut) {
     window.open('modificar.php?rut=' + rut, 'Curriculum', 'width=800, height=600, scrollbars=yes');
 }
 
+function DeleteCurriculum(rut) {
+
+	if(confirm("Está seguro que desea aliminar el curriculum?")) { 
+		new Ajax.Request('eliminar.php', {
+	        evalScripts: true,
+	        parameters: {rut: rut},
+	        onLoading: function() { $('loading').show(); },
+	        onComplete: function(transport) { $('loading').hide(); transport.responseText.evalScripts(); }
+	    });
+
+	    $('form-main').action = 'listado.php';
+	    $('form-main').request({
+	        onLoading: function() { $('loading').show(); new Effect.Opacity('marcotabla', {from: 1, to: 0}); },
+	        onComplete: function(transport) { $('loading').hide(); new Effect.Opacity('marcotabla', {from: 0, to: 1}); $('marcotabla').update(transport.responseText) }
+	    });
+
+
+   }
+
+}
+
 
 function LogIn() {
     new Ajax.Request('login.php', {
