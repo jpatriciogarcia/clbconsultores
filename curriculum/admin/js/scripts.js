@@ -44,6 +44,11 @@ function DeleteCurriculum(rut) {
 }
 
 
+function listadoToExcel() {
+    window.open('listado.php?exportar=excel');
+}
+
+
 function LogIn() {
     new Ajax.Request('login.php', {
         evalScripts: true,

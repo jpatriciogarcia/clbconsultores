@@ -60,8 +60,8 @@ require_once("../conexion.php");
     <div id="imprimir">
       <table width="250" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td><img src="images/excel.png" /></td>
-          <td><img src="images/printer1.png" /></td>
+          <td><img onclick="javascript:;listadoToExcel()" src="images/excel.png" /></td>
+          <td><img onclick="javascript:;print()" src="images/printer1.png" /></td>
         </tr>
       </table>
       </div>
