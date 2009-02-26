@@ -24,7 +24,7 @@ function EditCurriculum(rut) {
 
 function DeleteCurriculum(rut) {
 
-	if(confirm("Está seguro que desea aliminar el curriculum?")) { 
+	if(confirm("Está seguro que desea eliminar el curriculum?")) { 
 		new Ajax.Request('eliminar.php', {
 	        evalScripts: true,
 	        parameters: {rut: rut},
