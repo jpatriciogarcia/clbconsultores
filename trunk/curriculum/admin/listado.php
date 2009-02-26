@@ -1,6 +1,10 @@
 <?php
 require_once ("../conexion.php");
 
+if ($_GET ['exportar']) {
+	header ( "Content-type: application/vnd.ms-excel" );
+}
+
 $page = isset ( $_GET ['page'] ) ? $_GET ['page'] : 1;
 $sql = "select * from {$curriculum->_table} order by apellido1";
 $Curriculum = $conexion->PageExecute ( $sql, RECORDS_BY_PAGE, $page );
@@ -79,6 +83,14 @@ while ( ! $Curriculum->EOF ) {
 	$Curriculum->MoveNext ();
 }
 ?>
+
+
+
+
+
+
+
+
 
 
 
